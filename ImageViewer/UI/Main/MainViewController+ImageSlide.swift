@@ -47,8 +47,40 @@ extension MainViewController {
                 self.imageTitleLabelOutlet.text = title
             }
         }
-        
+        initImageSliderTap()
         imageSliderAutoPlay()
+    }
+    
+    @objc func imageSliderTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        let size = self.imageSlideOutlet.images.count
+        if size == 0 { return }
+        let current = self.imageSlideOutlet.currentPage
+        let inputSource = self.imageSlideOutlet.images[current]
+        
+        let uiImageView = UIImageView()
+        inputSource.load(to: uiImageView) { (uiimage) in
+            guard let uiimage = uiimage else{
+                return
+            }
+            let configuration = ImageViewerConfiguration { config in
+                config.image = uiimage
+            }
+            
+            self.present(ImageViewerController(configuration: configuration), animated: true)
+        }
+    }
+    
+    func initImageSliderTap(){
+        let tapImageSlider_GestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageSliderTapped(tapGestureRecognizer:)))
+        imageSlideOutlet.isUserInteractionEnabled = true
+        imageSlideOutlet.addGestureRecognizer(tapImageSlider_GestureRecognizer)
+    }
+    
+    func imageSliderAutoPlay(){
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
+            self.imageSilderUpdate()
+        })
+        
     }
     
     private func imageSilderUpdate(){
@@ -57,13 +89,6 @@ extension MainViewController {
         let current = self.imageSlideOutlet.currentPage
         let newImageIndex = (current + 1) % size
         self.imageSlideOutlet.setCurrentPage(newImageIndex, animated: true)
-    }
-    
-    func imageSliderAutoPlay(){
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
-            self.imageSilderUpdate()
-        })
-        
     }
     
     func initGradient() {
