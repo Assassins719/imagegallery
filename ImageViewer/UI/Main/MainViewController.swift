@@ -24,11 +24,11 @@ class MainViewController: UIViewController {
     
     // image slider outlet -- end
     
-    // collection view outlet
+    // table view outlet
     
-    @IBOutlet weak var collectionViewOutlet: UICollectionView!
+    @IBOutlet weak var tableViewOutlet: UITableView!
     
-    // collection view outlet -- end
+    // table view outlet -- end
     
     var viewModel : MainViewModel!
     var imageList:[Image]!
@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
         
         initImageSlider()
         
-        initCollectionView()
+        initTableView()
     }
     
     func initViewModel() {

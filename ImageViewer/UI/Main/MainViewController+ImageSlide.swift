@@ -46,11 +46,27 @@ extension MainViewController {
                 self.imageTitleLabelOutlet.fadeTransition(0.8)
                 self.imageTitleLabelOutlet.text = title
             }
-            
         }
+        
+        imageSliderAutoPlay()
     }
     
-    func initGradient(){
+    private func imageSilderUpdate(){
+        let size = self.imageSlideOutlet.images.count
+        if size == 0 { return }
+        let current = self.imageSlideOutlet.currentPage
+        let newImageIndex = (current + 1) % size
+        self.imageSlideOutlet.setCurrentPage(newImageIndex, animated: true)
+    }
+    
+    func imageSliderAutoPlay(){
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
+            self.imageSilderUpdate()
+        })
+        
+    }
+    
+    func initGradient() {
         imageGradientTopOutlet.drawTopGradient()
         imageGradientBottomOutlet.drawBottomGradient()
     }
