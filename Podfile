@@ -22,6 +22,10 @@ target 'ImageViewer' do
   # di framework
   pod 'Swinject', '2.4.0'
   pod 'SwinjectStoryboard', '1.2.1'
+  # navigation library
+  pod 'Presentr', '1.3.2'
+  # loading splash
+  pod 'NVActivityIndicatorView'
   # ---------- Pods for ImageViewer end
   
   target 'ImageViewerTests' do

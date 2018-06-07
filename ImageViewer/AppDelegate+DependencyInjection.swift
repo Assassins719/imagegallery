@@ -21,16 +21,34 @@ extension AppDelegate {
     }
     
     func registerViewModels(){
+                diContainer.register(SplashViewModel.self) { r in
+                    let splashViewModel = SplashViewModel()
+                    splashViewModel.databaseService = r.resolve(DatabaseService.self)
+                    return splashViewModel
+                }
         diContainer.register(MainViewModel.self) { r in
             let mainViewModel = MainViewModel()
-            mainViewModel.databaseService = r.resolve(DatabaseService.self)
             return mainViewModel
         }
+        
+//        diContainer.register(ImageViewModel.self) { r in
+//            let imageViewModel = ImageViewModel()
+//            imageViewModel.databaseService = r.resolve(DatabaseService.self)
+//            return imageViewModel
+//        }
+        
     }
     
     func registerViewControllers(){
+        diContainer.storyboardInitCompleted(SplashViewController.self) { r, c in
+            c.viewModel = r.resolve(SplashViewModel.self)
+        }
         diContainer.storyboardInitCompleted(MainViewController.self) { r, c in
             c.viewModel = r.resolve(MainViewModel.self)
         }
+//        diContainer.storyboardInitCompleted(ImageViewerController.self) { r, c in
+//            c.viewModel = r.resolve(ImageViewModel.self)
+//        }
+        
     }
 }

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		07B6C1F3FD3D7D3BD8BF7939 /* Pods_ImageViewerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE895EEED05BEDCF736272C /* Pods_ImageViewerUITests.framework */; };
 		36F2C16DCBC2437C94CBCE02 /* Pods_ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308F2A41477CE537A1BE340C /* Pods_ImageViewer.framework */; };
+		84095FD520C8305B00302435 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84095FD420C8305B00302435 /* ImageViewModel.swift */; };
+		84095FD820C83E1A00302435 /* ImageDescriptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84095FD720C83E1A00302435 /* ImageDescriptionTableViewController.swift */; };
+		84095FDB20C848F300302435 /* ImageDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84095FDA20C848F200302435 /* ImageDescriptionTableViewCell.swift */; };
+		84095FDE20C8598300302435 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84095FDD20C8598300302435 /* SplashViewController.swift */; };
+		84095FE020C85E8400302435 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84095FDF20C85E8400302435 /* SplashViewModel.swift */; };
+		84095FE320C85FD900302435 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84095FE220C85FD900302435 /* Assets.swift */; };
 		840BED5120C0563D0098FC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BED5020C0563D0098FC4E /* AppDelegate.swift */; };
 		840BED5320C0563D0098FC4E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BED5220C0563D0098FC4E /* MainViewController.swift */; };
 		840BED5620C0563D0098FC4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840BED5420C0563D0098FC4E /* Main.storyboard */; };
@@ -113,6 +119,12 @@
 		308F2A41477CE537A1BE340C /* Pods_ImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE895EEED05BEDCF736272C /* Pods_ImageViewerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageViewerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8DA8FCE5C5A968D6F7E605 /* Pods-ImageViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageViewerTests/Pods-ImageViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84095FD420C8305B00302435 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		84095FD720C83E1A00302435 /* ImageDescriptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDescriptionTableViewController.swift; sourceTree = "<group>"; };
+		84095FDA20C848F200302435 /* ImageDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		84095FDD20C8598300302435 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		84095FDF20C85E8400302435 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		84095FE220C85FD900302435 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		840BED4D20C0563D0098FC4E /* ImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840BED5020C0563D0098FC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840BED5220C0563D0098FC4E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +268,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		84095FD620C83C5A00302435 /* ImageDescription */ = {
+			isa = PBXGroup;
+			children = (
+				84095FD920C848CA00302435 /* Models */,
+				84095FD720C83E1A00302435 /* ImageDescriptionTableViewController.swift */,
+			);
+			path = ImageDescription;
+			sourceTree = "<group>";
+		};
+		84095FD920C848CA00302435 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84095FDA20C848F200302435 /* ImageDescriptionTableViewCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84095FDC20C8596A00302435 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				84095FDD20C8598300302435 /* SplashViewController.swift */,
+				84095FDF20C85E8400302435 /* SplashViewModel.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		84095FE120C85FCE00302435 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				84095FE220C85FD900302435 /* Assets.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		840BED4420C0563D0098FC4E = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +420,9 @@
 		840BEDCB20C058CB0098FC4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				84095FE120C85FCE00302435 /* Assets */,
+				84095FDC20C8596A00302435 /* Splash */,
+				84095FD620C83C5A00302435 /* ImageDescription */,
 				84FE103920C4FA8800E026DF /* ImageViewer */,
 				846A003720C3180E00FDF37E /* Menu */,
 				840BEDCD20C059060098FC4E /* Main */,
@@ -510,6 +559,7 @@
 				84FE103D20C4FA8800E026DF /* Resources */,
 				84FE104020C4FA8800E026DF /* Transitions */,
 				84FE104520C4FA8800E026DF /* Utilities.swift */,
+				84095FD420C8305B00302435 /* ImageViewModel.swift */,
 			);
 			path = ImageViewer;
 			sourceTree = "<group>";
@@ -767,6 +817,8 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/GradientView/GradientView.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -777,6 +829,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GradientView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -812,18 +866,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84095FDB20C848F300302435 /* ImageDescriptionTableViewCell.swift in Sources */,
+				84095FE020C85E8400302435 /* SplashViewModel.swift in Sources */,
 				840BEDDF20C06F110098FC4E /* DatabaseService.swift in Sources */,
 				840BEDD220C066A20098FC4E /* StoryDatabase.swift in Sources */,
 				844B0FE020C118B200F3BBD1 /* CAGradientLayer.swift in Sources */,
+				84095FDE20C8598300302435 /* SplashViewController.swift in Sources */,
 				846A003520C3100300FDF37E /* SWRevealViewController.m in Sources */,
 				840BEDD720C06A7A0098FC4E /* Borrar.swift in Sources */,
+				84095FE320C85FD900302435 /* Assets.swift in Sources */,
 				840BEDE920C075EB0098FC4E /* CollectionImageService.swift in Sources */,
 				840BEDD420C066EF0098FC4E /* Image.swift in Sources */,
 				846A003920C3182900FDF37E /* MenuViewController.swift in Sources */,
 				84FEC98D20C77F4900A97637 /* MainViewController+tableview.swift in Sources */,
 				84FE104820C4FA8800E026DF /* AnimatableImageView.swift in Sources */,
 				846AFFEF20C2494E00FDF37E /* ImageCollectionViewCell.swift in Sources */,
+				84095FD820C83E1A00302435 /* ImageDescriptionTableViewController.swift in Sources */,
 				84FE104D20C4FA8800E026DF /* ImageViewerDismissalInteractor.swift in Sources */,
+				84095FD520C8305B00302435 /* ImageViewModel.swift in Sources */,
 				840BED5320C0563D0098FC4E /* MainViewController.swift in Sources */,
 				844B0FE220C11A9000F3BBD1 /* GradientView.swift in Sources */,
 				84FE104E20C4FA8800E026DF /* ImageViewerDismissalTransition.swift in Sources */,

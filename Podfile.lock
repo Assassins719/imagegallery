@@ -6,6 +6,10 @@ PODS:
   - ImageSlideshow (1.5.3):
     - ImageSlideshow/Core (= 1.5.3)
   - ImageSlideshow/Core (1.5.3)
+  - NVActivityIndicatorView (4.2.1):
+    - NVActivityIndicatorView/Presenter (= 4.2.1)
+  - NVActivityIndicatorView/Presenter (4.2.1)
+  - Presentr (1.3.2)
   - RxSwift (4.0.0)
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
@@ -19,6 +23,8 @@ DEPENDENCIES:
   - CocoaLumberjack/Swift (= 3.4.2)
   - GradientView (= 2.3.3)
   - ImageSlideshow (= 1.5.3)
+  - NVActivityIndicatorView
+  - Presentr (= 1.3.2)
   - RxSwift (= 4.0.0)
   - SQLite.swift (= 0.11.5)
   - SwiftFormat/CLI (= 0.33.6)
@@ -30,6 +36,8 @@ SPEC REPOS:
     - CocoaLumberjack
     - GradientView
     - ImageSlideshow
+    - NVActivityIndicatorView
+    - Presentr
     - RxSwift
     - SQLite.swift
     - SwiftFormat
@@ -40,12 +48,14 @@ SPEC CHECKSUMS:
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   GradientView: b044fa46c24062ee245a07a4e8bea4c5c4d63de0
   ImageSlideshow: 24a1184909f589379ba2527ebcc77996881bb1f2
+  NVActivityIndicatorView: 8068ba3ad39cb44cbaab25d89ff2546b3f092681
+  Presentr: 797ae6ec8904eaba4ec58a4c2065bd66e31569ea
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   SwiftFormat: ed9b18669d13893cd79f437e23f2bca5bce6abf1
   Swinject: a1364b0f66c2736bb03c1c7cab54809e16df25da
   SwinjectStoryboard: de60d1d30fbf442fe90fc5c31d9fff89cf3ef64f
 
-PODFILE CHECKSUM: 68a19968b5294a920e278e2fe9021865c50340a9
+PODFILE CHECKSUM: c9e38e635f614f7c5b8377ec149e6fa52fd7e908
 
 COCOAPODS: 1.5.2

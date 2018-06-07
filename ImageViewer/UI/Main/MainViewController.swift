@@ -12,7 +12,11 @@ import GradientView
 
 class MainViewController: UIViewController {
 
-    // image slider outlet
+    // MARK: menu image outlet
+    
+    @IBOutlet weak var menuImageOutlet: UIImageView!
+    
+    // MARK: image slider outlet
     
     @IBOutlet weak var imageSlideOutlet: ImageSlideshow!
     
@@ -22,19 +26,20 @@ class MainViewController: UIViewController {
     @IBOutlet weak var authorLabelOutlet: UILabel!
     @IBOutlet weak var imageTitleLabelOutlet: UILabel!
     
-    // image slider outlet -- end
-    
-    // table view outlet
+    // MARK: table view outlet
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     
-    // table view outlet -- end
-    
+    // MARK: other
     var viewModel : MainViewModel!
-    var imageList:[Image]!
+    
+    var topImageList:[Image]!
+    var imageSet:[[Image]]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initMenu()
         
         initViewModel()
         
@@ -43,8 +48,28 @@ class MainViewController: UIViewController {
         initTableView()
     }
     
+    @objc func menuImageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        if let revealVC = revealViewController() {
+            revealVC.rearViewRevealWidth = self.view.frame.width
+            revealVC.rearViewRevealOverdraw = 0
+            revealVC.revealToggle(animated: true)
+//            revealVC.rightViewRevealWidth = self.view.frame.width
+//            revealVC.rightRevealToggle(animated: true)
+            
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
+            view.addGestureRecognizer(revealVC.tapGestureRecognizer())
+        }
+    }
+
+    func initMenu(){
+        let tapMenuImage_GestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(menuImageTapped(tapGestureRecognizer:)))
+        menuImageOutlet.isUserInteractionEnabled = true
+        menuImageOutlet.addGestureRecognizer(tapMenuImage_GestureRecognizer)
+    }
+    
     func initViewModel() {
-        self.imageList = viewModel.getTopImageList()
+        self.topImageList = Assets.shared.topImageList
+        self.imageSet = Assets.shared.imageSet
     }
 
     override func didReceiveMemoryWarning() {

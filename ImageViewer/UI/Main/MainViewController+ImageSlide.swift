@@ -23,7 +23,7 @@ extension MainViewController {
         
         var imageSourceList = [ImageSource]()
         
-        for item in self.imageList {
+        for item in self.topImageList {
             guard let imageSource = item.getImageSource() else {
                 DDLogError("Cannot get imageSource")
                 continue
@@ -33,22 +33,22 @@ extension MainViewController {
         
         self.imageSlideOutlet.setImageInputs(imageSourceList)
         
-        self.authorLabelOutlet.text = self.imageList.first?.author
-        self.imageTitleLabelOutlet.text = self.imageList.first?.imageTitle
+        self.authorLabelOutlet.text = self.topImageList.first?.author
+        self.imageTitleLabelOutlet.text = self.topImageList.first?.imageTitle
         
         
         self.imageSlideOutlet.currentPageChanged = { page in
-            if let author = self.imageList[page].author{
+            if let author = self.topImageList[page].author{
                 self.authorLabelOutlet.fadeTransition(0.8)
                 self.authorLabelOutlet.text = author
             }
-            if let title = self.imageList[page].imageTitle {
+            if let title = self.topImageList[page].imageTitle {
                 self.imageTitleLabelOutlet.fadeTransition(0.8)
                 self.imageTitleLabelOutlet.text = title
             }
         }
         initImageSliderTap()
-        imageSliderAutoPlay()
+//        imageSliderAutoPlay()
     }
     
     @objc func imageSliderTapped(tapGestureRecognizer: UITapGestureRecognizer){
@@ -65,8 +65,11 @@ extension MainViewController {
             let configuration = ImageViewerConfiguration { config in
                 config.image = uiimage
             }
+            let imageViewController = ImageViewerController(configuration: configuration)
             
-            self.present(ImageViewerController(configuration: configuration), animated: true)
+            imageViewController.image_dbItem = self.topImageList[current]
+            self.present(imageViewController, animated: true)
+            
         }
     }
     

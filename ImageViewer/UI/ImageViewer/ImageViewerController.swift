@@ -1,7 +1,21 @@
 import UIKit
 import AVFoundation
+import Presentr
 
 public final class ImageViewerController: UIViewController {
+    
+    @IBOutlet weak var favourButtonOutlet: UIButton!
+  
+    var isFavorite = false {
+        didSet{
+            if self.isFavorite {
+                favourButtonOutlet.setImage(UIImage(named: "like_fill_small"), for: .normal)
+            }else{
+                favourButtonOutlet.setImage(UIImage(named: "like_out_small"), for: .normal)
+            }
+        }
+    }
+    
     @IBOutlet fileprivate var scrollView: UIScrollView!
     @IBOutlet fileprivate var imageView: UIImageView!
     @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
@@ -12,6 +26,31 @@ public final class ImageViewerController: UIViewController {
     public override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    // MARK: presentr configuration
+    let presenter: Presentr = {
+        let customPresenter = Presentr(presentationType: .fullScreen)
+        
+//        let width = ModalSize.full
+//        let height = ModalSize.full
+//        //        let center = ModalCenterPosition.customOrigin(origin: CGPoint(x: 0, y: 0))
+//        let customType = PresentationType.custom(width: ModalSize.default, height: height, center: ModalCenterPosition.center)
+//        customPresenter.presentationType = customType
+        
+        customPresenter.transitionType = .coverVertical
+        customPresenter.dismissTransitionType = .coverVerticalFromTop
+        customPresenter.roundCorners = false
+        customPresenter.dismissOnSwipe = true
+        customPresenter.dismissOnTap = false
+        customPresenter.dismissOnSwipeDirection = .bottom
+        customPresenter.backgroundColor = .clear
+        customPresenter.backgroundOpacity = 0
+        return customPresenter
+    }()
+    
+    var image_dbItem:Image!
+    
+    var viewModel = ImageViewModel()
     
     public init(configuration: ImageViewerConfiguration?) {
         self.configuration = configuration
@@ -30,10 +69,39 @@ public final class ImageViewerController: UIViewController {
         super.viewDidLoad()
         imageView.image = configuration?.imageView?.image ?? configuration?.image
         
+        initFavourButton()
+        
         setupScrollView()
         setupGestureRecognizers()
         setupTransitions()
         setupActivityIndicator()
+    }
+    
+    func initFavourButton(){
+        self.isFavorite = viewModel.isFavoriteImage(image_dbItem)
+        
+    }
+    
+    @IBAction func onTapFavourButton(_ sender: Any) {
+        self.isFavorite = !self.isFavorite
+        if self.isFavorite {
+            viewModel.databaseService.changeFavoriteImage(image_dbItem, true)
+        }else{
+            viewModel.databaseService.changeFavoriteImage(image_dbItem, false)
+        }
+
+    }
+    
+    @IBAction func onTapInfoButton(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let controller = appDelegate.mainSwinjectStoryboard.instantiateViewController(withIdentifier: "ImageDescriptionTableViewController")
+            as! ImageDescriptionTableViewController
+        present(controller, animated: true)
+//        customPresentViewController(presenter,
+//                                    viewController: controller,
+//                                    animated: true,
+//                                    completion: nil
+//        )
     }
 }
 

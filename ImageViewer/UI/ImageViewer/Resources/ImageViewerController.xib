@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewerController" customModule="SimpleImageViewer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewerController" customModule="ImageViewer" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="oPl-2f-Knx" id="GOD-eG-o96"/>
+                <outlet property="favourButtonOutlet" destination="asG-Dz-BZu" id="y6C-Uq-dU9"/>
                 <outlet property="imageView" destination="rHA-5m-kkS" id="V86-k1-pPH"/>
                 <outlet property="scrollView" destination="cQD-2Q-pvo" id="M6k-QU-OVY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="bEt-1B-b5l"/>
@@ -57,15 +58,33 @@
                         <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="jwg-86-OJF"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asG-Dz-BZu">
+                    <rect key="frame" x="325" y="27" width="30" height="30"/>
+                    <state key="normal" image="like_out_small"/>
+                    <connections>
+                        <action selector="onTapFavourButton:" destination="-1" eventType="touchUpInside" id="l1y-c0-wB3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nG-TU-SDJ">
+                    <rect key="frame" x="172" y="607" width="30" height="30"/>
+                    <state key="normal" title="??"/>
+                    <connections>
+                        <action selector="onTapInfoButton:" destination="-1" eventType="touchUpInside" id="HZM-7B-pXK"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="oPl-2f-Knx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4hr-Ua-OMa"/>
                 <constraint firstItem="cQD-2Q-pvo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ErM-q5-uey"/>
                 <constraint firstItem="Wsy-fe-raz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GNz-6j-kdf"/>
+                <constraint firstItem="8nG-TU-SDJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OUY-o9-kPY"/>
+                <constraint firstAttribute="bottom" secondItem="8nG-TU-SDJ" secondAttribute="bottom" constant="30" id="Q5c-Ng-OU0"/>
                 <constraint firstItem="Wsy-fe-raz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="Tze-CU-2Ab"/>
+                <constraint firstAttribute="trailing" secondItem="asG-Dz-BZu" secondAttribute="trailing" constant="20" id="YPW-7l-Gef"/>
                 <constraint firstItem="rHA-5m-kkS" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Zh5-4A-UbJ"/>
                 <constraint firstAttribute="trailing" secondItem="cQD-2Q-pvo" secondAttribute="trailing" id="fiR-iH-AGe"/>
+                <constraint firstItem="asG-Dz-BZu" firstAttribute="centerY" secondItem="Wsy-fe-raz" secondAttribute="centerY" id="fmH-hU-vEf"/>
                 <constraint firstAttribute="bottom" secondItem="cQD-2Q-pvo" secondAttribute="bottom" id="kQk-Ie-iGl"/>
                 <constraint firstItem="oPl-2f-Knx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lBh-77-nAV"/>
                 <constraint firstItem="cQD-2Q-pvo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lTy-Fb-3fn"/>
@@ -76,5 +95,6 @@
     </objects>
     <resources>
         <image name="closeButton" width="13" height="13"/>
+        <image name="like_out_small" width="30" height="30"/>
     </resources>
 </document>

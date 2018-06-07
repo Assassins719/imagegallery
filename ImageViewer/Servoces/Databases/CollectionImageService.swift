@@ -27,5 +27,23 @@ class CollectionImageService {
         return nil
     }
     
+    func addCollectionImage(id idCollection:Int64, idImage: Int64){
+         let query = CollectionImage_Table.CollectionImage
+            .insert(
+                CollectionImage_Table.idCollection <- idCollection,
+                CollectionImage_Table.idImage <- idImage
+                )
+        _ = try! StoryDatabase.shared.db.run(query)
+    }
     
+    func removeCollectionImage(id idCollection:Int64, idImage: Int64){
+        let query = CollectionImage_Table.CollectionImage
+            .filter(
+                CollectionImage_Table.idCollection == idCollection &&
+                CollectionImage_Table.idImage == idImage
+        )
+        
+        
+        _ = try! StoryDatabase.shared.db.run(query.delete())
+    }
 }

@@ -12,6 +12,7 @@ class ImageTableViewCell: UITableViewCell {
 
     weak var viewController:UIViewController!
     
+    @IBOutlet weak var titleLabelOutlet: UILabel!
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     
     var imageList:[Image]!

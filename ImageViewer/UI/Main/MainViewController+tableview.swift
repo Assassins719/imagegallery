@@ -9,22 +9,36 @@
 import Foundation
 import UIKit
 
-extension MainViewController : UITableViewDelegate, UITableViewDataSource {
+extension MainViewController : UITableViewDataSource {
+    
+    func initTableView(){
+        self.tableViewOutlet.dataSource = self
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.imageSet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
+        switch indexPath.row {
+        case 0:
+            cell.titleLabelOutlet.text = "Special collection, 1997-1998"
+        case 1:
+            cell.titleLabelOutlet.text = "Special collection, 1999-2000"
+        case 2:
+            cell.titleLabelOutlet.text = "Special collection, 2000-2001"
+        case 3:
+            cell.titleLabelOutlet.text = "Special collection, 2001-2002"
+        case 4:
+            cell.titleLabelOutlet.text = "Favorites"
+        default:break
+            
+        }
+        
         cell.viewController = self
-        cell.imageList = self.imageList
+        cell.imageList = self.imageSet[indexPath.row]
         
         return cell
     }
-    
-    func initTableView(){
-        self.tableViewOutlet.dataSource = self
-        self.tableViewOutlet.delegate = self
-    }
-    
 }

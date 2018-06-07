@@ -9,19 +9,5 @@
 import Foundation
 
 class MainViewModel {
-    var databaseService : DatabaseService!
-    
-    func getTopImageList() -> [Image]!{
-        // guard let imageList = databaseService.getTopImageList() else {
-        //     fatalError()
-        // }
-         guard let imageList = databaseService.imageService.getImageList() else {
-             fatalError()
-         }
-        
-        for item in imageList {
-            print(item.debug)
-        }
-        return imageList
-    }
+
 }

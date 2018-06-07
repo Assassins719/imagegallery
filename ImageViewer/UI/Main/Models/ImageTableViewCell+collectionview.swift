@@ -30,10 +30,12 @@ extension ImageTableViewCell :UICollectionViewDelegate,UICollectionViewDataSourc
             config.imageView = cell.imageView
         }
         
-        viewController.present(ImageViewerController(configuration: configuration), animated: true)
+        let imageViewController = ImageViewerController(configuration: configuration)
+        
+        imageViewController.image_dbItem = self.imageList[indexPath.row]
+        viewController.present(imageViewController, animated: true)
     }
 
- 
 }
 
 //extension ImageTableViewCell:UICollectionViewDelegateFlowLayout{
