@@ -8,6 +8,7 @@
 
 import Foundation
 import SQLite
+import CocoaLumberjack
 
 class CollectionImageService {
     func getCollectionImageList(byId idCollection:Int64) -> [CollectionImage]! {
@@ -22,7 +23,7 @@ class CollectionImageService {
             }
             return arr_result
         } catch {
-            print("\(error)")
+            DDLogError("\(error)")
         }
         return nil
     }
@@ -33,7 +34,11 @@ class CollectionImageService {
                 CollectionImage_Table.idCollection <- idCollection,
                 CollectionImage_Table.idImage <- idImage
                 )
-        _ = try! StoryDatabase.shared.db.run(query)
+        do {
+            _ = try StoryDatabase.shared.db.run(query)
+        }catch{
+            DDLogError(error.localizedDescription)
+        }
     }
     
     func removeCollectionImage(id idCollection:Int64, idImage: Int64){

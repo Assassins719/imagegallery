@@ -15,7 +15,11 @@ class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabelOutlet: UILabel!
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     
-    var imageList:[Image]!
+    var imageList:[Image]!{
+        didSet {
+            collectionViewOutlet.reloadData()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

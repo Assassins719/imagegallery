@@ -12,6 +12,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var authorOutlet: UILabel!
+    @IBOutlet weak var titleOutlet: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         

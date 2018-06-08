@@ -9,6 +9,7 @@
 import UIKit
 import ImageSlideshow
 import GradientView
+import RxSwift
 
 class MainViewController: UIViewController {
 
@@ -47,7 +48,7 @@ class MainViewController: UIViewController {
         
         initTableView()
     }
-    
+ 
     @objc func menuImageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         if let revealVC = revealViewController() {
             revealVC.rearViewRevealWidth = self.view.frame.width
@@ -70,6 +71,18 @@ class MainViewController: UIViewController {
     func initViewModel() {
         self.topImageList = Assets.shared.topImageList
         self.imageSet = Assets.shared.imageSet
+        
+        _ = Assets.shared.updated.asObservable()
+        .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { containFavorite in
+                print("containFavorite", containFavorite)
+                guard let containFavorite = containFavorite else {
+                    return
+                }
+                self.imageSet = Assets.shared.imageSet
+                
+                self.tableViewOutlet.reloadData()
+            })
     }
 
     override func didReceiveMemoryWarning() {

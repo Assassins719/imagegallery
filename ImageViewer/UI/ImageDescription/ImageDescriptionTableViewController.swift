@@ -38,7 +38,9 @@ class ImageDescriptionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageDescriptionTableViewCell", for: indexPath) as! ImageDescriptionTableViewCell
         switch indexPath.row {
-        case 0: cell.layer.backgroundColor = UIColor.clear.cgColor
+        case 0: cell.layer.backgroundColor = UIColor.red.withAlphaComponent(0.1).cgColor
+//            cell.layer.opacity = 0.01
+        // UIColor.clear.cgColor
         case 1: cell.labelOutlet.text = "Title"
         case 2: cell.labelOutlet.text = "this is description"
         default: break

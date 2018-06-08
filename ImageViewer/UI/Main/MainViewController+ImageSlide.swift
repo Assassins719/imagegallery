@@ -65,7 +65,11 @@ extension MainViewController {
             let configuration = ImageViewerConfiguration { config in
                 config.image = uiimage
             }
-            let imageViewController = ImageViewerController(configuration: configuration)
+            
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let imageViewController = ImageViewerController(configuration:configuration)// appDelegate.mainSwinjectStoryboard.instantiateViewController(withIdentifier: "ImageViewerController")
+//                as! ImageViewerController
+//            imageViewController.configuration = configuration
             
             imageViewController.image_dbItem = self.topImageList[current]
             self.present(imageViewController, animated: true)

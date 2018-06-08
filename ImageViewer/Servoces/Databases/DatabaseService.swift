@@ -40,6 +40,9 @@ class DatabaseService {
         guard let collectionImageList = collectionImageService.getCollectionImageList(byId: CollectionName.Favorites.rawValue) else{
             return nil
         }
+        if collectionImageList.count == 0 {
+            return nil
+        }
         var list_image = [Image]()
         for item in collectionImageList {
             guard let image = imageService.getImage(byId: item.idImage) else{

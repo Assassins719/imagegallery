@@ -52,6 +52,12 @@ class SplashViewModel {
         return Single<[[Image]]>.create { single in
             var imageSet = self.getSpecialImageList()
             if let favoritesImageList = self.getFavoritesImageList() {
+//                for item in favoritesImageList {
+//                    guard let _ = item.getUIImage() else {
+//                        DDLogError("Cannot get image")
+//                        continue
+//                    }
+//                }
                 imageSet.append(favoritesImageList)
             }
             

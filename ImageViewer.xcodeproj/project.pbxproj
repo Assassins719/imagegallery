@@ -268,6 +268,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8406470E20CA347200589AE2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84095FE120C85FCE00302435 /* Assets */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		84095FD620C83C5A00302435 /* ImageDescription */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +340,7 @@
 				840BEDDC20C06EA50098FC4E /* Servoces */,
 				840BED7E20C058BD0098FC4E /* Resource */,
 				840BEDCC20C058DE0098FC4E /* View */,
+				8406470E20CA347200589AE2 /* Models */,
 				840BEDCB20C058CB0098FC4E /* UI */,
 				840BED5020C0563D0098FC4E /* AppDelegate.swift */,
 				84FD08C920C199EA00D41312 /* AppDelegate+DependencyInjection.swift */,
@@ -420,12 +429,11 @@
 		840BEDCB20C058CB0098FC4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				84095FE120C85FCE00302435 /* Assets */,
 				84095FDC20C8596A00302435 /* Splash */,
-				84095FD620C83C5A00302435 /* ImageDescription */,
-				84FE103920C4FA8800E026DF /* ImageViewer */,
-				846A003720C3180E00FDF37E /* Menu */,
 				840BEDCD20C059060098FC4E /* Main */,
+				84FE103920C4FA8800E026DF /* ImageViewer */,
+				84095FD620C83C5A00302435 /* ImageDescription */,
+				846A003720C3180E00FDF37E /* Menu */,
 				840BED5920C056490098FC4E /* LaunchScreen.storyboard */,
 				840BED5420C0563D0098FC4E /* Main.storyboard */,
 			);

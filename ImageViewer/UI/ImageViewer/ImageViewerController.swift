@@ -21,7 +21,7 @@ public final class ImageViewerController: UIViewController {
     @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
     
     fileprivate var transitionHandler: ImageViewerTransitioningHandler?
-    fileprivate let configuration: ImageViewerConfiguration?
+    var configuration: ImageViewerConfiguration?
     
     public override var prefersStatusBarHidden: Bool {
         return true
@@ -51,11 +51,13 @@ public final class ImageViewerController: UIViewController {
     var image_dbItem:Image!
     
     var viewModel = ImageViewModel()
-    
+
     public init(configuration: ImageViewerConfiguration?) {
+
         self.configuration = configuration
+
         super.init(nibName: String(describing: type(of: self)), bundle: Bundle(for: type(of: self)))
-        
+
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
         modalPresentationCapturesStatusBarAppearance = true
@@ -64,9 +66,14 @@ public final class ImageViewerController: UIViewController {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+//    
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        modalPresentationStyle = .overFullScreen
+        modalTransitionStyle = .crossDissolve
+        modalPresentationCapturesStatusBarAppearance = true
+        
         imageView.image = configuration?.imageView?.image ?? configuration?.image
         
         initFavourButton()
@@ -79,15 +86,19 @@ public final class ImageViewerController: UIViewController {
     
     func initFavourButton(){
         self.isFavorite = viewModel.isFavoriteImage(image_dbItem)
-        
     }
     
+    @IBAction func onTapCloseButton(_ sender: Any) {
+            dismiss(animated: true)
+    }
     @IBAction func onTapFavourButton(_ sender: Any) {
         self.isFavorite = !self.isFavorite
         if self.isFavorite {
             viewModel.databaseService.changeFavoriteImage(image_dbItem, true)
+            _ = Assets.shared.refresh()
         }else{
             viewModel.databaseService.changeFavoriteImage(image_dbItem, false)
+            _ = Assets.shared.refresh()
         }
 
     }

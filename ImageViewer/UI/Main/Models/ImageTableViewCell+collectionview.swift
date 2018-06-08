@@ -15,12 +15,17 @@ extension ImageTableViewCell :UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imageList.count
+          return self.imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-        cell.imageView.image = self.imageList[indexPath.row].getUIImage()
+        if let image =  self.imageList[indexPath.row].getUIImage(){
+            cell.imageView.image = image
+        }
+        cell.titleOutlet.text = self.imageList[indexPath.row].imageTitle
+        cell.authorOutlet.text = self.imageList[indexPath.row].author
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -30,12 +35,16 @@ extension ImageTableViewCell :UICollectionViewDelegate,UICollectionViewDataSourc
             config.imageView = cell.imageView
         }
         
-        let imageViewController = ImageViewerController(configuration: configuration)
+        //            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let imageViewController = ImageViewerController(configuration:configuration)// appDelegate.mainSwinjectStoryboard.instantiateViewController(withIdentifier: "ImageViewerController")
+        //                as! ImageViewerController
+        //            imageViewController.configuration = configuration
+
         
         imageViewController.image_dbItem = self.imageList[indexPath.row]
         viewController.present(imageViewController, animated: true)
     }
-
+    
 }
 
 //extension ImageTableViewCell:UICollectionViewDelegateFlowLayout{
