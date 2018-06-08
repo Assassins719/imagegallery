@@ -342,7 +342,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcW-7Q-9P9">
                                 <rect key="frame" x="0.0" y="257" width="375" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cross_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="wbL-d7-7z9">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="wbL-d7-7z9">
                                         <rect key="frame" x="40" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Ct1-2L-CIY"/>
@@ -378,7 +378,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3J-ef-lB9">
                                 <rect key="frame" x="0.0" y="307" width="375" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cross_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="XsC-S0-Fuj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mesuem" translatesAutoresizingMaskIntoConstraints="NO" id="XsC-S0-Fuj">
                                         <rect key="frame" x="40" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="JpH-Pt-77c"/>
@@ -784,7 +784,6 @@
     </scenes>
     <resources>
         <image name="closeButton" width="13" height="13"/>
-        <image name="ic_cross_white.png" width="13" height="13"/>
         <image name="icon_artwork" width="511" height="511"/>
         <image name="icon_button_info" width="50" height="50"/>
         <image name="icon_facebook" width="99" height="99"/>
