@@ -100,6 +100,8 @@ public final class ImageViewerController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let controller = appDelegate.mainSwinjectStoryboard.instantiateViewController(withIdentifier: "ImageDescriptionTableViewController")
             as! ImageDescriptionTableViewController
+        controller.image_dbItem = self.image_dbItem
+        
 //        present(controller, animated: true)
         let width = ModalSize.fluid(percentage: 0.33)
         let height = ModalSize.full

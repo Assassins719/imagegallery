@@ -9,7 +9,7 @@
 import UIKit
 
 class ImageDescriptionTableViewController: UITableViewController {
-
+    var image_dbItem:Image!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,8 +41,8 @@ class ImageDescriptionTableViewController: UITableViewController {
         case 0: cell.layer.backgroundColor = UIColor.red.withAlphaComponent(0.1).cgColor
 //            cell.layer.opacity = 0.01
         // UIColor.clear.cgColor
-        case 1: cell.labelOutlet.text = "Title"
-        case 2: cell.labelOutlet.text = "this is description"
+        case 1: cell.labelOutlet.text = image_dbItem.author
+        case 2: cell.labelOutlet.text = image_dbItem.imageTitle
         default: break
         }
         
