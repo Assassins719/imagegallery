@@ -51,11 +51,9 @@ class MainViewController: UIViewController {
  
     @objc func menuImageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         if let revealVC = revealViewController() {
-            revealVC.rearViewRevealWidth = self.view.frame.width
+            revealVC.rearViewRevealWidth = 300
             revealVC.rearViewRevealOverdraw = 0
             revealVC.revealToggle(animated: true)
-//            revealVC.rightViewRevealWidth = self.view.frame.width
-//            revealVC.rightRevealToggle(animated: true)
             
             view.addGestureRecognizer(revealVC.panGestureRecognizer())
             view.addGestureRecognizer(revealVC.tapGestureRecognizer())

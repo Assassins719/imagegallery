@@ -30,18 +30,11 @@ public final class ImageViewerController: UIViewController {
     // MARK: presentr configuration
     let presenter: Presentr = {
         let customPresenter = Presentr(presentationType: .fullScreen)
-        
-//        let width = ModalSize.full
-//        let height = ModalSize.full
-//        //        let center = ModalCenterPosition.customOrigin(origin: CGPoint(x: 0, y: 0))
-//        let customType = PresentationType.custom(width: ModalSize.default, height: height, center: ModalCenterPosition.center)
-//        customPresenter.presentationType = customType
-        
-        customPresenter.transitionType = .coverVertical
-        customPresenter.dismissTransitionType = .coverVerticalFromTop
+        customPresenter.transitionType = .coverHorizontalFromRight
+        customPresenter.dismissTransitionType = .coverHorizontalFromRight
         customPresenter.roundCorners = false
         customPresenter.dismissOnSwipe = true
-        customPresenter.dismissOnTap = false
+        customPresenter.dismissOnTap = true
         customPresenter.dismissOnSwipeDirection = .bottom
         customPresenter.backgroundColor = .clear
         customPresenter.backgroundOpacity = 0
@@ -107,12 +100,17 @@ public final class ImageViewerController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let controller = appDelegate.mainSwinjectStoryboard.instantiateViewController(withIdentifier: "ImageDescriptionTableViewController")
             as! ImageDescriptionTableViewController
-        present(controller, animated: true)
-//        customPresentViewController(presenter,
-//                                    viewController: controller,
-//                                    animated: true,
-//                                    completion: nil
-//        )
+//        present(controller, animated: true)
+        let width = ModalSize.fluid(percentage: 0.33)
+        let height = ModalSize.full
+        let center = ModalCenterPosition.customOrigin(origin: CGPoint(x:  self.view.frame.width * 0.67, y:0))
+        let customType = PresentationType.custom(width: width, height: height, center: center)
+        presenter.presentationType = customType
+        customPresentViewController(presenter,
+                                    viewController: controller,
+                                    animated: true,
+                                    completion: nil
+        )
     }
 }
 

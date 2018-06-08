@@ -23,16 +23,16 @@ class ImageDescriptionTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
-        case 0: return 300
+        case 0: return 0
         case 1: return 50
-        case 2: return 500
-        case 3: return 400
+        case 2: return self.view.frame.height - 50
+//        case 3: return self.view.frame.height - 50 - 500
         default: return 60
         }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

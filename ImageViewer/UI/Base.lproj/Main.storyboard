@@ -56,7 +56,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="Cuq-Kg-gNZ" userLabel="Image View menu">
-                                <rect key="frame" x="315" y="30" width="30" height="30"/>
+                                <rect key="frame" x="25" y="25" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="App-r1-sd7"/>
                                     <constraint firstAttribute="height" constant="30" id="n2F-xf-vKp"/>
@@ -183,8 +183,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="34Y-qp-EPr" secondAttribute="trailing" id="TTM-cs-vXw"/>
                             <constraint firstItem="3XY-KD-bcP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wkm-8n-EBF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="34Y-qp-EPr" secondAttribute="bottom" id="XGY-Ws-dCe"/>
-                            <constraint firstItem="Cuq-Kg-gNZ" firstAttribute="top" secondItem="Mz6-mG-0Sh" secondAttribute="top" constant="30" id="eV6-5h-Bj4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cuq-Kg-gNZ" secondAttribute="trailing" constant="30" id="iUL-vj-wXK"/>
+                            <constraint firstItem="Cuq-Kg-gNZ" firstAttribute="top" secondItem="Mz6-mG-0Sh" secondAttribute="top" constant="25" id="eV6-5h-Bj4"/>
+                            <constraint firstItem="Cuq-Kg-gNZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="mvN-fx-8Wv"/>
                             <constraint firstItem="3XY-KD-bcP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oL5-dA-wta"/>
                             <constraint firstItem="34Y-qp-EPr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qDK-Kt-PED"/>
                             <constraint firstItem="Mz6-mG-0Sh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qLF-BF-tEx"/>
@@ -270,7 +270,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teU-8s-IiZ">
                                 <rect key="frame" x="0.0" y="157" width="375" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cross_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="DKl-mj-rhF">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="DKl-mj-rhF">
                                         <rect key="frame" x="40" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="1zK-6t-8Xv"/>
@@ -306,7 +306,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZm-rz-xPe">
                                 <rect key="frame" x="0.0" y="207" width="375" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cross_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="o6Y-fa-vtH">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mesuem" translatesAutoresizingMaskIntoConstraints="NO" id="o6Y-fa-vtH">
                                         <rect key="frame" x="40" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="NPv-f9-EEb"/>
@@ -414,7 +414,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kN9-2A-ee8">
                                 <rect key="frame" x="0.0" y="357" width="375" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cross_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="pK8-Ac-UCw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info" translatesAutoresizingMaskIntoConstraints="NO" id="pK8-Ac-UCw">
                                         <rect key="frame" x="40" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="1MO-vY-WK4"/>
@@ -681,9 +681,9 @@
                                     <action selector="onTapFavourButton:" destination="8vC-yk-X6y" eventType="touchUpInside" id="WgQ-8V-EH3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvT-8y-omA">
-                                <rect key="frame" x="172" y="607" width="30" height="30"/>
-                                <state key="normal" title="??"/>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvT-8y-omA">
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
+                                <state key="normal" image="icon_button_info"/>
                                 <connections>
                                     <action selector="onTapInfoButton:" destination="8vC-yk-X6y" eventType="touchUpInside" id="RJB-6l-ikh"/>
                                 </connections>
@@ -785,8 +785,12 @@
     <resources>
         <image name="closeButton" width="13" height="13"/>
         <image name="ic_cross_white.png" width="13" height="13"/>
+        <image name="icon_artwork" width="511" height="511"/>
+        <image name="icon_button_info" width="50" height="50"/>
         <image name="icon_facebook" width="99" height="99"/>
+        <image name="icon_info" width="511" height="511"/>
         <image name="icon_instagram" width="99" height="99"/>
+        <image name="icon_mesuem" width="511" height="511"/>
         <image name="icon_pintest" width="99" height="99"/>
         <image name="icon_twiter" width="99" height="99"/>
         <image name="like_out_small" width="30" height="30"/>

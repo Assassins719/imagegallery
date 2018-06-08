@@ -83,7 +83,6 @@
 		84FE104820C4FA8800E026DF /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE103A20C4FA8800E026DF /* AnimatableImageView.swift */; };
 		84FE104920C4FA8800E026DF /* ImageViewerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE103B20C4FA8800E026DF /* ImageViewerConfiguration.swift */; };
 		84FE104A20C4FA8800E026DF /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE103C20C4FA8800E026DF /* ImageViewerController.swift */; };
-		84FE104B20C4FA8800E026DF /* ImageViewer-Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FE103E20C4FA8800E026DF /* ImageViewer-Assets.xcassets */; };
 		84FE104C20C4FA8800E026DF /* ImageViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FE103F20C4FA8800E026DF /* ImageViewerController.xib */; };
 		84FE104D20C4FA8800E026DF /* ImageViewerDismissalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE104120C4FA8800E026DF /* ImageViewerDismissalInteractor.swift */; };
 		84FE104E20C4FA8800E026DF /* ImageViewerDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE104220C4FA8800E026DF /* ImageViewerDismissalTransition.swift */; };
@@ -201,7 +200,6 @@
 		84FE103A20C4FA8800E026DF /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableImageView.swift; sourceTree = "<group>"; };
 		84FE103B20C4FA8800E026DF /* ImageViewerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerConfiguration.swift; sourceTree = "<group>"; };
 		84FE103C20C4FA8800E026DF /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerController.swift; sourceTree = "<group>"; };
-		84FE103E20C4FA8800E026DF /* ImageViewer-Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "ImageViewer-Assets.xcassets"; sourceTree = "<group>"; };
 		84FE103F20C4FA8800E026DF /* ImageViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewerController.xib; sourceTree = "<group>"; };
 		84FE104120C4FA8800E026DF /* ImageViewerDismissalInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissalInteractor.swift; sourceTree = "<group>"; };
 		84FE104220C4FA8800E026DF /* ImageViewerDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissalTransition.swift; sourceTree = "<group>"; };
@@ -575,7 +573,6 @@
 		84FE103D20C4FA8800E026DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84FE103E20C4FA8800E026DF /* ImageViewer-Assets.xcassets */,
 				84FE103F20C4FA8800E026DF /* ImageViewerController.xib */,
 			);
 			path = Resources;
@@ -732,7 +729,6 @@
 				840BEDBE20C058BD0098FC4E /* 1006@_H300.jpg in Resources */,
 				840BEDB420C058BD0098FC4E /* 1014.jpg in Resources */,
 				840BEDC620C058BD0098FC4E /* 1014@_H300.jpg in Resources */,
-				84FE104B20C4FA8800E026DF /* ImageViewer-Assets.xcassets in Resources */,
 				840BEDB220C058BD0098FC4E /* 1012.jpg in Resources */,
 				840BEDBF20C058BD0098FC4E /* 1007@_H300.jpg in Resources */,
 				840BEDAE20C058BD0098FC4E /* 1008.jpg in Resources */,
