@@ -578,7 +578,11 @@
                     </view>
                     <connections>
                         <outlet property="closeImageOutlet" destination="dN7-yH-Z8U" id="fdN-Qw-glp"/>
+                        <outlet property="facebookImageOutlet" destination="Kn1-jw-5ZB" id="Ljj-Cv-jsW"/>
+                        <outlet property="instagramImageOutlet" destination="cGc-mi-S28" id="zqi-rM-gmC"/>
                         <outlet property="languageButtonOutlet" destination="zMn-9a-xTX" id="FG0-Q5-sj2"/>
+                        <outlet property="pintestImageOutlet" destination="8fG-5Y-0Sy" id="h7D-fd-gpt"/>
+                        <outlet property="twiterImageOutlet" destination="3ad-Vh-W6L" id="Dsv-tj-0Rq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkL-rs-YcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -732,15 +736,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDR-TH-cd7">
-                                            <rect key="frame" x="31" y="11" width="299" height="0.0"/>
+                                            <rect key="frame" x="20" y="11" width="335" height="0.0"/>
                                             <attributedString key="attributedText"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="qDR-TH-cd7" firstAttribute="top" secondItem="Oif-3c-bfg" secondAttribute="top" constant="11" id="Yio-0P-wpW"/>
-                                        <constraint firstItem="qDR-TH-cd7" firstAttribute="leading" secondItem="Oif-3c-bfg" secondAttribute="leading" constant="31" id="d8V-Sk-x9V"/>
-                                        <constraint firstAttribute="trailing" secondItem="qDR-TH-cd7" secondAttribute="trailing" constant="45" id="pV7-i9-z2h"/>
+                                        <constraint firstItem="qDR-TH-cd7" firstAttribute="leading" secondItem="Oif-3c-bfg" secondAttribute="leading" constant="20" id="d8V-Sk-x9V"/>
+                                        <constraint firstAttribute="trailing" secondItem="qDR-TH-cd7" secondAttribute="trailing" constant="20" id="pV7-i9-z2h"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

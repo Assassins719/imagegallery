@@ -69,7 +69,7 @@ class Image {
     
     func getUIImage() -> UIImage! {
         if self.uiImage == nil {
-            guard let filename = self.imageFileName else{
+            guard var filename = self.imageFileName else{
                 return nil
             }
             guard let uiImage = UIImage(named: filename, in: Bundle(for: type(of: self)), compatibleWith: nil) else{
