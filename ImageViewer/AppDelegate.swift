@@ -23,10 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let diContainer = Container()
     var mainSwinjectStoryboard: SwinjectStoryboard!
     
+    
+    fileprivate func grabStoryboard() -> String {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return "Main"
+        } else {
+            return "iPhone"
+        }
+    }
+    
     override init() {
         super.init()
         
-        mainSwinjectStoryboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: diContainer)
+        mainSwinjectStoryboard = SwinjectStoryboard.create(name: grabStoryboard(), bundle: nil, container: diContainer)
         
         registerServices()
         registerViewModels()

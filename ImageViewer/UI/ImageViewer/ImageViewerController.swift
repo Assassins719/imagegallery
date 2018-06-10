@@ -103,16 +103,29 @@ public final class ImageViewerController: UIViewController {
         controller.image_dbItem = self.image_dbItem
         
 //        present(controller, animated: true)
-        let width = ModalSize.fluid(percentage: 0.33)
-        let height = ModalSize.full
-        let center = ModalCenterPosition.customOrigin(origin: CGPoint(x:  self.view.frame.width * 0.67, y:0))
-        let customType = PresentationType.custom(width: width, height: height, center: center)
-        presenter.presentationType = customType
-        customPresentViewController(presenter,
-                                    viewController: controller,
-                                    animated: true,
-                                    completion: nil
-        )
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let width = ModalSize.fluid(percentage: 0.33)
+            let height = ModalSize.full
+            let center = ModalCenterPosition.customOrigin(origin: CGPoint(x:  self.view.frame.width * 0.67, y:0))
+            let customType = PresentationType.custom(width: width, height: height, center: center)
+            presenter.presentationType = customType
+            customPresentViewController(presenter,
+                                        viewController: controller,
+                                        animated: true,
+                                        completion: nil
+            )
+        } else{
+            let width = ModalSize.fluid(percentage: 0.90)
+            let height = ModalSize.full
+            let center = ModalCenterPosition.customOrigin(origin: CGPoint(x:  self.view.frame.width * 0.10, y:0))
+            let customType = PresentationType.custom(width: width, height: height, center: center)
+            presenter.presentationType = customType
+            customPresentViewController(presenter,
+                                        viewController: controller,
+                                        animated: true,
+                                        completion: nil
+            )
+        }
     }
 }
 

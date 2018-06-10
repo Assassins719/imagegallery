@@ -47,9 +47,16 @@ extension ImageTableViewCell :UICollectionViewDelegate,UICollectionViewDataSourc
     
 }
 
-//extension ImageTableViewCell:UICollectionViewDelegateFlowLayout{
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////        self.frame.width
-//        return CGSize(width: 150.0, height: 180.0)
-//    }
-//}
+extension ImageTableViewCell:UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.frame.width - 24
+//        let imageWidth = self.imageList.first?.wImg
+//        let imageHeight = self.imageList.first?.hImg
+//
+//        let height = width * CGFloat(imageHeight! / imageWidth!)
+//        if height == 0 {
+            return CGSize(width: width, height: 280)
+//        }
+//        return CGSize(width: width, height: height)
+    }
+}

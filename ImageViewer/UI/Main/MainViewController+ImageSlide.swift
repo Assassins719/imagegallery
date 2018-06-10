@@ -48,7 +48,7 @@ extension MainViewController {
             }
         }
         initImageSliderTap()
-        imageSliderAutoPlay()
+//        imageSliderAutoPlay()
     }
     
     @objc func imageSliderTapped(tapGestureRecognizer: UITapGestureRecognizer){

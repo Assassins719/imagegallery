@@ -12,7 +12,7 @@ import GradientView
 import RxSwift
 
 class MainViewController: UIViewController {
-
+    
     // MARK: menu image outlet
     
     @IBOutlet weak var menuImageOutlet: UIImageView!
@@ -48,10 +48,14 @@ class MainViewController: UIViewController {
         
         initTableView()
     }
- 
+    
     @objc func menuImageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         if let revealVC = revealViewController() {
-            revealVC.rearViewRevealWidth = 300
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                revealVC.rearViewRevealWidth = 300
+            }else{
+                revealVC.rearViewRevealWidth = self.view.frame.width
+            }
             revealVC.rearViewRevealOverdraw = 0
             revealVC.revealToggle(animated: true)
             
@@ -59,7 +63,7 @@ class MainViewController: UIViewController {
             view.addGestureRecognizer(revealVC.tapGestureRecognizer())
         }
     }
-
+    
     func initMenu(){
         let tapMenuImage_GestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(menuImageTapped(tapGestureRecognizer:)))
         menuImageOutlet.isUserInteractionEnabled = true
@@ -71,10 +75,9 @@ class MainViewController: UIViewController {
         self.imageSet = Assets.shared.imageSet
         
         _ = Assets.shared.updated.asObservable()
-        .observeOn(MainScheduler.instance)
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { containFavorite in
-                print("containFavorite", containFavorite)
-                guard let containFavorite = containFavorite else {
+                guard let _ = containFavorite else {
                     return
                 }
                 self.imageSet = Assets.shared.imageSet
@@ -82,12 +85,12 @@ class MainViewController: UIViewController {
                 self.tableViewOutlet.reloadData()
             })
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

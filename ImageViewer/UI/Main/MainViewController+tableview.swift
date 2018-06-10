@@ -9,14 +9,23 @@
 import Foundation
 import UIKit
 
-extension MainViewController : UITableViewDataSource {
+extension MainViewController : UITableViewDataSource, UITableViewDelegate {
     
     func initTableView(){
         self.tableViewOutlet.dataSource = self
+        self.tableViewOutlet.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.imageSet.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 300
+        } else{
+            return 50.5 + CGFloat(280 * self.imageSet[indexPath.row].count)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

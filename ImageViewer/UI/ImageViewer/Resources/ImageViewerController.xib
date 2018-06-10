@@ -65,9 +65,9 @@
                         <action selector="onTapFavourButton:" destination="-1" eventType="touchUpInside" id="l1y-c0-wB3"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nG-TU-SDJ">
-                    <rect key="frame" x="172" y="607" width="30" height="30"/>
-                    <state key="normal" title="??"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nG-TU-SDJ">
+                    <rect key="frame" x="162" y="587" width="50" height="50"/>
+                    <state key="normal" image="icon_button_info"/>
                     <connections>
                         <action selector="onTapInfoButton:" destination="-1" eventType="touchUpInside" id="HZM-7B-pXK"/>
                     </connections>
@@ -95,6 +95,7 @@
     </objects>
     <resources>
         <image name="closeButton" width="13" height="13"/>
+        <image name="icon_button_info" width="50" height="50"/>
         <image name="like_out_small" width="30" height="30"/>
     </resources>
 </document>
