@@ -22,7 +22,7 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
-            return 300
+            return 340
         } else{
             return 50.5 + CGFloat(280 * self.imageSet[indexPath.row].count)
         }
